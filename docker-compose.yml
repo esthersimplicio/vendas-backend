@@ -1,0 +1,33 @@
+version: '3'
+services:
+    db:
+      build: ./services/mysql/.
+      command: --character-set-server=utf8 --collation-server=utf8_general_ci --init-connect='SET NAMES UTF8;'
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: S1SViageN5
+        MYSQL_DATABASE: viagens
+      ports:
+        - "3326:3306"
+      networks:
+        - sisv_network
+
+
+
+    service_sistema_viagem:
+      build: .
+      restart: on-failure
+      volumes:
+        - .:/usr/src/app/
+      ports:
+        - 5000:5000
+      depends_on:
+        - db
+      links:
+        - db
+      command: ["flask", "run","--host","0.0.0.0","--port","5000"] 
+      networks:
+        - sisv_network
+
+networks:
+  sisv_network:
