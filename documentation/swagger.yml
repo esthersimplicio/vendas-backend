@@ -1,0 +1,20 @@
+swagger: '2.0'
+
+host: 'localhost:5000'
+
+info:
+  description: |
+    Este é um documento para apresentar funcionalidades do *MVP*. 
+
+    ### Introdução
+
+    MVP de cadastro de estudantes, trabalho Puc-Rio
+
+    O repositório do projeto, pode ser encontrado em [/MVP-Puc rio](https://github.com/joaofeliperl/backend).
+
+
+  produces:
+    - application/x-www-form-urlencoded
+
+tags:
+  - name: API

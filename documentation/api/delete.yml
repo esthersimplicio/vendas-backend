@@ -1,0 +1,23 @@
+tags:
+  - API
+
+responses:
+  200:
+    description: Usuário criado com sucesso
+    schema:
+      $ref: '#/definitions/UsuariosAdd'
+
+
+definitions:
+  UsuariosAdd:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        example: "Fulano"
+      email:
+        type: "string"
+        example: "xxx@xx.com"
+      senha:
+        type: "string"
+        example: "123"

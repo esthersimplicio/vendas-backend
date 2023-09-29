@@ -1,0 +1,44 @@
+Para editar os dados de usuários
+Necessario estar logado
+---
+parameters:
+  - in: formData
+    name: nome
+    description: Novo nome do usuário
+    type: string
+  - in: formData
+    name: telefone
+    description: Novo nome do usuário
+    type: string
+  - in: formData
+    name: email
+    description: Novo email do usuário
+    type: string
+  - in: formData
+    name: senha
+    description: Nova senha do usuário
+    type: string
+
+tags:
+  - API
+
+responses:
+  200:
+    description: Usuário criado com sucesso
+    schema:
+      $ref: '#/definitions/UsuariosAdd'
+
+
+definitions:
+  UsuariosAdd:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        example: "Fulano"
+      email:
+        type: "string"
+        example: "xxx@xx.com"
+      senha:
+        type: "string"
+        example: "123"

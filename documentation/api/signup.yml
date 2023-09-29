@@ -1,0 +1,55 @@
+Para inserir novos dados de usuários
+Endpoint ára criar informações de usuários
+---
+parameters:
+    - in: formData
+      name: nome
+      description: 
+      required: true
+      type: string
+    - in: formData
+      name: telefone
+      description: 
+      required: true
+      type: string
+    - in: formData
+      name: email
+      description:
+      required: true
+      type: string
+    - in: formData
+      name: senha
+      required: true
+      type: string
+
+
+tags:
+  - API
+  
+responses:
+  200:
+    description: Usuário criado com sucesso
+    schema:
+      $ref: '#/definitions/UsuarioAdd'
+
+definitions:
+  UsuarioAdd:
+    type: object
+    properties:
+      name:
+        type: string
+        example: "Fulano"
+      email:
+        type: string
+        example: "fulano@gmail.com"
+      senha:
+        type: string
+        example: "1b"
+
+  UsuarioGet:
+    type: object
+    properties:
+      name:
+        type: string
+      email:
+        type: string

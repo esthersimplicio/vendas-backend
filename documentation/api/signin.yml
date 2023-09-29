@@ -1,0 +1,35 @@
+Para para realizar login
+Endpoint para realizar login de usuários
+---
+parameters:
+    - in: formData
+      name: email
+      description: 
+      required: true
+      type: string
+    - in: formData
+      name: senha
+      description: 
+      required: true
+      type: string
+
+tags:
+  - API
+
+responses:
+  200:
+    description: Usuário logado com sucesso
+    schema:
+      $ref: '#/definitions/UsuarioAdd'
+
+
+definitions:
+  UsuarioAdd:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+        example: "(xx) xxxx-xxxx"
+      senha:
+        type: "string"
+        example: "1b"
